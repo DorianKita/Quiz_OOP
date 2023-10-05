@@ -45,7 +45,7 @@ class Quiz {
     displayQuestion(){
         const questionElement = document.getElementById('question');
         const answersElement = document.getElementById('answers');
-
+        answersElement.textContent = '';
         questionElement.textContent = this.#questions[this.#currentQuestionIndex].title;
 
       this.#questions[this.#currentQuestionIndex].answers.forEach((answer, index) => {
@@ -67,15 +67,19 @@ class Quiz {
         }
         this.#currentQuestionIndex++;
         if(this.#currentQuestionIndex < this.#questions.length) {
+
             this.displayQuestion();
         } else {
-            alert(`That's all. You got ${this.#score}/${this.#questions.length}`);
+            this.displayResult();
         }
         } else {
             alert('Pick answer please.');
         }
     }
-    
+    displayResult(){
+        const result = document.getElementById('result');
+        result.textContent = `That's all! Your result: ${this.#score}/${this.#questions.length}`;
+    }
 }
 
 
