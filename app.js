@@ -18,6 +18,9 @@ class Question  {
     get title(){
         return this.#title;
     }
+    get answers(){
+        return this.#answers;
+    }
 }
 
 class Quiz {
@@ -34,9 +37,15 @@ class Quiz {
 
     displayQuestion(){
         const questionElement = document.getElementById('question');
-        const answersElement = document.getElementById('answer');
+        const answersElement = document.getElementById('answers');
 
         questionElement.textContent = this.#questions[this.#currentQuestionIndex].title;
+
+      this.#questions[this.#currentQuestionIndex].answers.forEach((answer, index) => {
+        const answerElement = document.createElement('div');
+        answerElement.innerHTML = `<label><input type="radio" value=${index}> ${answer}</label>`;
+        answersElement.appendChild(answerElement);
+      });
     }
 }
 
