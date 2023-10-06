@@ -1,6 +1,6 @@
 const questionData = [
     ['Which programming language is best for web development?', ['C#', 'Python', 'Javascript'],2],
-    ['Co oznacza [] w JavaScript?', ['Array', 'Object', 'String'],0],
+    ['What does [] means in JavaScript?', ['Array', 'Object', 'String'],0],
     ['How many primitive types are there in JavaScript?',['1','7','3'],1],
 ];
 
